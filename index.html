@@ -1,0 +1,521 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Life's Good Head Spa Training</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="icon" href="img/logo.svg" type="image/svg+xml">
+<style>[hidden]:not([hidden=until-found i]){display:none!important} img{max-width:100%}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* Layout: same shell as the original course area (forest header, cream page, white cards), rebranded for the barber centre. */
+:root {
+  --forest: #183D2D; --forest-2: #1F4D39;
+  --gold: #C49A45; --gold-2: #D9B96E;
+  --cream: #F7F2E8; --beige: #EDE3D3;
+  --ink: #25231F; --ink-2: rgba(37,35,31,.62); --ink-3: rgba(37,35,31,.45);
+  --surface: #FFFFFF; --line: #EDE3D3;
+  --on-forest: #F7F2E8; --on-forest-2: rgba(247,242,232,.68);
+  --badge-done-bg: rgba(24,61,45,.10); --badge-done-fg: #183D2D;
+  --shadow: 0 2px 12px rgba(24,61,45,.05);
+  --font-display: 'Cormorant Garamond', 'Iowan Old Style', Georgia, serif;
+  --font-body: 'Poppins', 'Segoe UI', system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --forest: #0F2A1F; --forest-2: #17392A;
+  --gold: #D4AE5E; --gold-2: #E3C47F;
+  --cream: #121A16; --beige: #2A332D;
+  --ink: #EFE9DD; --ink-2: rgba(239,233,221,.68); --ink-3: rgba(239,233,221,.48);
+  --surface: #1A231E; --line: #2C3630;
+  --on-forest: #F2ECE0; --on-forest-2: rgba(242,236,224,.66);
+  --badge-done-bg: rgba(212,174,94,.16); --badge-done-fg: #E3C47F;
+  --shadow: 0 2px 14px rgba(0,0,0,.35);
+  color-scheme: dark;
+} }
+:root[data-theme="dark"] {
+  --forest: #0F2A1F; --forest-2: #17392A;
+  --gold: #D4AE5E; --gold-2: #E3C47F;
+  --cream: #121A16; --beige: #2A332D;
+  --ink: #EFE9DD; --ink-2: rgba(239,233,221,.68); --ink-3: rgba(239,233,221,.48);
+  --surface: #1A231E; --line: #2C3630;
+  --on-forest: #F2ECE0; --on-forest-2: rgba(242,236,224,.66);
+  --badge-done-bg: rgba(212,174,94,.16); --badge-done-fg: #E3C47F;
+  --shadow: 0 2px 14px rgba(0,0,0,.35);
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--cream); color: var(--ink); font-family: var(--font-body); font-size: 14px; line-height: 1.55; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 40; background: var(--forest); }
+a { color: inherit; }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 500; margin: 0; text-wrap: balance; }
+p { margin: 0; }
+:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+
+.wrap { max-width: 1152px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+@media (min-width: 640px) { .wrap { padding-left: max(32px, env(safe-area-inset-left, 0px)); padding-right: max(32px, env(safe-area-inset-right, 0px)); } }
+
+.eyebrow { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: .14em; color: var(--gold); }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; box-shadow: var(--shadow); }
+.muted { color: var(--ink-2); }
+
+/* Header */
+header.top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 30; background: var(--forest); color: var(--on-forest); }
+header.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 12px; }
+.brand { display: flex; align-items: center; gap: 12px; text-decoration: none; min-width: 0; }
+.brand-mark { flex: none; width: 54px; height: 54px; display: grid; place-items: center; }
+.brand-mark img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.brand-mark span { font-family: var(--font-display); font-style: italic; font-size: 17px; color: var(--gold-2); letter-spacing: .02em; }
+.brand-text { display: flex; flex-direction: column; line-height: 1.1; min-width: 0; }
+.brand-name { font-family: var(--font-display); font-size: 19px; font-weight: 600; letter-spacing: .02em; color: var(--on-forest); white-space: nowrap; }
+.brand-sub { font-size: 10px; text-transform: uppercase; letter-spacing: .16em; color: var(--gold-2); white-space: nowrap; }
+nav.tabs { display: flex; gap: 4px; font-size: 12px; font-weight: 500; text-transform: uppercase; letter-spacing: .05em; }
+nav.tabs a { text-decoration: none; padding: 8px 16px; border-radius: 999px; color: var(--on-forest-2); }
+nav.tabs a:hover { color: var(--on-forest); }
+nav.tabs a[aria-current="page"] { background: rgba(247,242,232,.10); color: var(--gold-2); }
+.hello { font-size: 13px; color: var(--on-forest-2); white-space: nowrap; }
+@media (max-width: 767px) { nav.tabs, .hello { display: none; } .brand-name { font-size: 17px; } }
+
+/* Bottom nav on phones */
+nav.bottom { display: none; }
+@media (max-width: 767px) {
+  nav.bottom { display: flex; position: fixed; inset: auto 0 0; z-index: 30; background: var(--surface); border-top: 1px solid var(--line);
+    padding-left: max(4px, env(safe-area-inset-left, 0px)); padding-right: max(4px, env(safe-area-inset-right, 0px)); padding-bottom: env(safe-area-inset-bottom, 0px); }
+  nav.bottom a { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 2px; padding-block: 10px; text-decoration: none; font-size: 10px; font-weight: 500; letter-spacing: .04em; color: var(--ink-3); }
+  nav.bottom a[aria-current="page"] { color: var(--gold); }
+  nav.bottom svg { width: 20px; height: 20px; }
+  main { padding-bottom: 96px !important; }
+}
+
+main { padding-block: 32px 64px; }
+.view[hidden] { display: none !important; }
+
+/* Buttons */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; border-radius: 999px; padding: 12px 24px; font: 500 12px/1.2 var(--font-body); text-transform: uppercase; letter-spacing: .05em; text-decoration: none; border: 0; cursor: pointer; }
+.btn-primary { background: var(--forest); color: var(--on-forest); }
+.btn-primary:hover { background: var(--forest-2); }
+.btn-gold { background: var(--gold); color: #183D2D; }
+.btn-gold:hover { background: var(--gold-2); }
+.btn[disabled] { opacity: .6; cursor: progress; }
+.btn-block { width: 100%; }
+
+/* Training */
+.hero { display: grid; gap: 20px; }
+@media (min-width: 768px) { .hero { grid-template-columns: 1.3fr 1fr; align-items: stretch; } }
+.hello-card { padding: 32px 28px; display: flex; flex-direction: column; justify-content: center; gap: 12px; }
+.hello-card h1 { font-size: clamp(28px, 4vw, 34px); }
+.hello-card p { max-width: 30rem; font-size: 15px; }
+.next-card { border-radius: 16px; background: var(--forest); color: var(--on-forest); padding: 28px; display: flex; flex-direction: column; justify-content: space-between; gap: 24px; box-shadow: var(--shadow); }
+.next-card .eyebrow { color: var(--gold-2); }
+.next-card h2 { font-style: italic; font-size: 22px; margin-top: 6px; }
+.next-card .sub { font-size: 13px; color: var(--on-forest-2); margin-top: 4px; }
+.next-btn { display: flex; align-items: center; justify-content: space-between; border-radius: 999px; background: rgba(247,242,232,.10); padding: 12px 20px; font-size: 12px; font-weight: 500; text-transform: uppercase; letter-spacing: .05em; color: var(--on-forest); text-decoration: none; }
+.next-btn:hover { background: rgba(247,242,232,.16); }
+.next-btn span { color: var(--gold-2); }
+
+.intro { margin-top: 20px; padding: 32px 28px; display: grid; gap: 28px; }
+@media (min-width: 900px) { .intro { grid-template-columns: 1.15fr 1fr; padding: 40px; } }
+.intro h2 { font-size: clamp(26px, 3.4vw, 32px); margin-top: 8px; }
+.intro .lead { display: grid; gap: 14px; font-size: 15px; color: var(--ink-2); max-width: 36rem; margin-top: 16px; }
+.intro .lead strong { color: var(--ink); font-weight: 500; }
+.intro ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; align-content: start; }
+.intro li { display: grid; grid-template-columns: 28px 1fr; gap: 12px; align-items: start; font-size: 14px; color: var(--ink-2); }
+.intro li b { display: block; color: var(--ink); font-weight: 500; margin-bottom: 2px; }
+.intro .mark { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--gold); color: var(--gold); display: grid; place-items: center; font-family: var(--font-display); font-style: italic; font-size: 15px; }
+.intro .sign { margin-top: 20px; font-family: var(--font-display); font-style: italic; font-size: 20px; color: var(--ink); }
+
+.section-head { margin-top: 48px; }
+.section-head h2 { font-size: 30px; margin-top: 6px; }
+.section-head p { font-size: 14px; color: var(--ink-2); margin-top: 6px; }
+.grid { margin-top: 24px; display: grid; gap: 20px; }
+@media (min-width: 640px) { .grid.three, .grid.two { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1024px) { .grid.three { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+
+.module { padding: 24px 26px; display: flex; flex-direction: column; gap: 16px; }
+.module .row { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+.module .num { font-family: var(--font-display); font-style: italic; font-size: 26px; color: var(--gold); line-height: 1; }
+.badge { display: inline-flex; align-items: center; border-radius: 999px; padding: 4px 12px; font-size: 10px; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; background: var(--beige); color: var(--ink-2); white-space: nowrap; }
+.badge.done { background: var(--badge-done-bg); color: var(--badge-done-fg); }
+.module h3 { font-size: 21px; }
+.module p { font-size: 13.5px; color: var(--ink-2); margin-top: 6px; }
+.module .meta { margin-top: auto; font-size: 11px; color: var(--ink-3); font-variant-numeric: tabular-nums; }
+
+/* Bonuses */
+.page-head h1 { font-size: 32px; margin-top: 8px; }
+.page-head p { margin-top: 6px; max-width: 36rem; font-size: 14px; color: var(--ink-2); }
+.bonus { display: flex; flex-direction: column; overflow: hidden; }
+.bonus .cover { aspect-ratio: 16 / 10; max-width: 100%; background: var(--beige); overflow: hidden; }
+.bonus .cover img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; display: block; }
+.bonus .body { flex: 1; display: flex; flex-direction: column; gap: 12px; padding: 24px 26px; }
+.bonus h3 { font-size: 21px; }
+.bonus p { font-size: 13.5px; color: var(--ink-2); }
+.bonus .btn { margin-top: auto; }
+
+/* Certificate */
+.cert-area { margin-top: 24px; display: flex; flex-direction: column; align-items: center; gap: 24px; }
+.field { width: 100%; max-width: 24rem; display: flex; flex-direction: column; gap: 6px; }
+.field label { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: .06em; color: var(--ink-3); }
+.field input { width: 100%; border-radius: 12px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); padding: 10px 16px; font: 14px var(--font-body); }
+.field input:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 1px var(--gold); }
+/* The certificate itself always prints light, whatever the page theme */
+#certificate { width: 100%; max-width: 672px; aspect-ratio: 297 / 210; border: 10px solid #183D2D; background: #F7F2E8; padding: clamp(10px, 3vw, 28px); color: #25231F; }
+#certificate .inner { height: 100%; border: 1px solid rgba(196,154,69,.5); display: flex; flex-direction: column; align-items: center; justify-content: space-between; text-align: center; padding: clamp(10px, 3vw, 32px) clamp(10px, 4vw, 40px); }
+#certificate .cert-brand { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+#certificate .cert-logo { width: clamp(44px, 10vw, 76px); height: clamp(44px, 10vw, 76px); border-radius: 8px; border: 1px solid #C49A45; display: grid; place-items: center; overflow: hidden; background: #183D2D; }
+#certificate .cert-logo img { width: 88%; height: 88%; object-fit: contain; display: block; }
+#certificate .cert-logo span { font-family: var(--font-display); font-style: italic; color: #D9B96E; font-size: clamp(12px, 2.6vw, 18px); }
+#certificate .cert-eyebrow { font-size: clamp(8px, 1.6vw, 11px); font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: #C49A45; }
+#certificate h2 { font-style: italic; color: #183D2D; font-size: clamp(18px, 4vw, 30px); }
+#certificate .cert-small { font-size: clamp(9px, 1.8vw, 13px); color: rgba(37,35,31,.6); }
+#certificate .cert-name { font-family: var(--font-display); color: #C49A45; font-size: clamp(22px, 5.4vw, 40px); margin-top: clamp(2px, 1vw, 8px); overflow-wrap: anywhere; line-height: 1.15; }
+#certificate .cert-text { max-width: 28rem; margin: clamp(4px, 1.4vw, 14px) auto 0; font-size: clamp(8.5px, 1.75vw, 13px); line-height: 1.55; color: rgba(37,35,31,.62); }
+#certificate .cert-foot { width: 100%; display: flex; align-items: flex-end; justify-content: space-between; gap: 12px; font-size: clamp(8px, 1.5vw, 11px); color: rgba(37,35,31,.55); }
+#certificate .cert-foot .issuer { display: flex; flex-direction: column; align-items: center; }
+#certificate .cert-foot .issuer b { font-family: var(--font-display); font-style: italic; font-weight: 500; font-size: clamp(11px, 2.2vw, 16px); color: #25231F; }
+#certificate .cert-foot .issuer span { margin-top: 3px; border-top: 1px solid rgba(37,35,31,.3); padding-top: 3px; min-width: 7rem; }
+.cert-note { font-size: 12px; color: var(--ink-3); text-align: center; max-width: 26rem; }
+
+footer.foot { padding-block: 0 32px; font-size: 11px; color: var(--ink-3); }
+.next-btn { width: 100%; border: 0; cursor: pointer; font-family: var(--font-body); }
+
+/* In-page PDF reader */
+.reader { position: fixed; inset: 0; z-index: 60; display: flex; flex-direction: column; background: rgba(12,20,16,.94); padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
+.reader[hidden] { display: none !important; }
+.reader-bar { display: flex; align-items: center; gap: 10px; background: #183D2D; color: #F7F2E8; padding-block: 10px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.reader-bar h2 { flex: 1; min-width: 0; font-size: 19px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.btn-sm { padding: 9px 16px; font-size: 11px; }
+.btn-ghost { background: rgba(247,242,232,.10); color: #F7F2E8; }
+.btn-ghost:hover { background: rgba(247,242,232,.18); }
+.reader-pages { flex: 1; overflow-y: auto; display: flex; flex-direction: column; align-items: center; gap: 16px; padding-block: 16px 40px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.reader-page { position: relative; width: 100%; max-width: 1100px; background: #fff; box-shadow: 0 4px 24px rgba(0,0,0,.35); flex: none; }
+.reader-page canvas { display: block; width: 100%; height: auto; }
+.reader-link { position: absolute; border-radius: 6px; }
+.reader-link:hover, .reader-link:focus-visible { outline: 2px solid #D9B96E; outline-offset: 2px; }
+.reader-msg { color: #F2ECE0; text-align: center; margin-top: 48px; max-width: 28rem; }
+@media (prefers-reduced-motion: no-preference) { .module, .bonus { transition: box-shadow .2s, transform .2s; } .module:hover, .bonus:hover { transform: translateY(-2px); } }
+</style>
+
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#training" aria-label="Life's Good Barber Centre — Head Spa Training">
+      <span class="brand-mark" data-logo><span>LG</span></span>
+      <span class="brand-text">
+        <span class="brand-name">Life's Good</span>
+        <span class="brand-sub">Barber Centre · Head Spa</span>
+      </span>
+    </a>
+    <nav class="tabs" aria-label="Sections">
+      <a href="#training" data-tab="training">Training</a>
+      <a href="#bonuses" data-tab="bonuses">Bonuses</a>
+      <a href="#certificate" data-tab="certificate">Certificate</a>
+    </nav>
+    <span class="hello">Hi, team member</span>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- TRAINING -->
+  <section class="view" id="view-training" aria-labelledby="training-title">
+    <div class="hero">
+      <div class="card hello-card">
+        <h1 id="training-title">Hi there, welcome aboard</h1>
+        <p class="muted">This is the Head Spa training for the Life's Good Barber Centre team. Pick up where you left off and work through the modules at your own pace.</p>
+      </div>
+      <div class="next-card">
+        <div>
+          <p class="eyebrow">Your next step</p>
+          <h2>Continue your training</h2>
+          <p class="sub" id="next-label">Module 01 — Head Spa Fundamentals</p>
+        </div>
+        <button class="next-btn" id="next-link" type="button" data-open="pdf/Module-1-Head-Spa-Fundamentals-EN.pdf" data-title="Module 01 — Head Spa Fundamentals" data-module="01">Continue where I left off <span aria-hidden="true">→</span></button>
+      </div>
+    </div>
+
+    <section class="card intro" aria-labelledby="intro-title">
+      <div>
+        <p class="eyebrow">Before you start</p>
+        <h2 id="intro-title">An introduction to the course</h2>
+        <div class="lead">
+          <p>Congratulations on taking this step. You're about to learn <strong>Head Spa</strong>, a scalp care experience that is growing fast around the world and can become a very profitable service for our salon.</p>
+          <p>The method was designed for professionals who want to learn in a simple, clear way, without unnecessary complications. There's no theory here that you can't put into practice.</p>
+          <p>You'll follow a complete method, step by step: from mastering the technique and organising the service, to setting prices and the best way to offer it to our clients.</p>
+        </div>
+      </div>
+      <div>
+        <ul>
+          <li><span class="mark">1</span><div><b>Follow the modules in order</b>Start with the basics and move forward module by module. Each part builds on what you learned before.</div></li>
+          <li><span class="mark">2</span><div><b>Use the reference videos</b>Some modules include reference videos to help you see and better understand the techniques.</div></li>
+          <li><span class="mark">3</span><div><b>Make the most of the bonuses</b>They help you put it into practice faster, from organising the new service to attracting your first clients.</div></li>
+          <li><span class="mark">4</span><div><b>Enjoy the process</b>The goal is simple: a method that actually works in practice. Relax, take this time for yourself and let's get started.</div></li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="section-head">
+      <p class="eyebrow">Main training</p>
+      <h2>Head Spa Training</h2>
+      <p>From technique to offering the service in our salon.</p>
+    </div>
+    <div class="grid three" id="modules"></div>
+  </section>
+
+  <!-- BONUSES -->
+  <section class="view" id="view-bonuses" aria-labelledby="bonuses-title" hidden>
+    <div class="page-head">
+      <p class="eyebrow">Your bonuses</p>
+      <h1 id="bonuses-title">Extra materials</h1>
+      <p>Extra materials to help you set up and grow the new Head Spa service.</p>
+    </div>
+    <div class="grid two" id="bonus-list"></div>
+  </section>
+
+  <!-- CERTIFICATE -->
+  <section class="view" id="view-certificate" aria-labelledby="cert-title" hidden>
+    <div class="page-head">
+      <p class="eyebrow">Certification</p>
+      <h1 id="cert-title">My certificate</h1>
+    </div>
+    <div class="cert-area">
+      <div class="field">
+        <label for="cert-name-input">Full name for the certificate</label>
+        <input id="cert-name-input" type="text" placeholder="Enter your full name" autocomplete="name">
+      </div>
+      <div id="certificate" aria-label="Certificate preview">
+        <div class="inner">
+          <div class="cert-brand">
+            <span class="cert-logo" data-logo><span>LG</span></span>
+            <p class="cert-eyebrow">Life's Good Barber Centre</p>
+          </div>
+          <div>
+            <h2>Certificate of Completion</h2>
+            <p class="cert-small" style="margin-top:clamp(6px,2vw,22px)">This certifies that</p>
+            <p class="cert-name" id="cert-name">Your Full Name</p>
+            <p class="cert-text">has successfully completed the Head Spa Training at Life's Good Barber Centre, covering technique, setup and the delivery of a professional Head Spa service.</p>
+          </div>
+          <div class="cert-foot">
+            <span id="cert-date"></span>
+            <span class="issuer"><b>Life's Good Barber Centre</b><span>Coorparoo, QLD</span></span>
+          </div>
+        </div>
+      </div>
+      <button class="btn btn-gold" id="cert-download" type="button">Download certificate (PDF)</button>
+      <p class="cert-note" id="cert-note">Type your name above, then download your certificate as a PDF.</p>
+    </div>
+  </section>
+</main>
+
+<div class="reader" id="reader" role="dialog" aria-modal="true" aria-labelledby="reader-title" hidden>
+  <div class="reader-bar">
+    <h2 id="reader-title">Module</h2>
+    <button class="btn btn-gold btn-sm" id="reader-save" type="button">Save PDF</button>
+    <button class="btn btn-ghost btn-sm" id="reader-close" type="button" aria-label="Close reader">Close &#x2715;</button>
+  </div>
+  <div class="reader-pages" id="reader-pages"></div>
+</div>
+
+<footer class="foot wrap">Head Spa Training · Life's Good Barber Centre, 24 Harries Rd, Coorparoo QLD 4151</footer>
+
+<nav class="bottom" aria-label="Sections">
+  <a href="#training" data-tab="training"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 19V8l8-4 8 4v11"/><path d="M9 19v-6h6v6"/></svg>Training</a>
+  <a href="#bonuses" data-tab="bonuses"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="4" y="9" width="16" height="11" rx="1.5"/><path d="M3 9h18M12 9v11M12 9c-2-4-6-4-6-1.5S10 9 12 9c2 0 6-.5 6-1.5S14 5 12 9z"/></svg>Bonuses</a>
+  <a href="#certificate" data-tab="certificate"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="9" r="5"/><path d="M9 13.5 8 21l4-2 4 2-1-7.5"/></svg>Certificate</a>
+</nav>
+
+<script>
+(function () {
+  // Logo: set LOGO_SRC to the barber centre's logo file once it is published alongside the page.
+  const LOGO_SRC = "img/logo.svg";
+  if (LOGO_SRC) document.querySelectorAll("[data-logo]").forEach(el => { el.innerHTML = ""; const i = new Image(); i.src = LOGO_SRC; i.alt = "Life's Good Barber Centre logo"; el.appendChild(i); });
+
+  const modules = [
+    { n: "01", title: "Head Spa Fundamentals", desc: "Concept, the experience in context, hygiene, safety and professional limits.", pages: 15, file: "pdf/Module-1-Head-Spa-Fundamentals-EN.pdf" },
+    { n: "02", title: "Setup and Equipment", desc: "Station types, basins, arch or cascade, and how to choose the right setup.", pages: 19, file: "pdf/Module-2-Setup-and-Equipment-EN.pdf" },
+    { n: "03", title: "Scalp Massage Method", desc: "Scalp massage technique applied to the Head Spa experience.", pages: 22, file: "pdf/Module-3-Scalp-Massage-Method-EN.pdf" },
+    { n: "04", title: "Complete Treatment Protocol", desc: "An organised sequence from preparation through to the finish.", pages: 28, file: "pdf/Module-4-Complete-Treatment-Protocol-EN.pdf" },
+    { n: "05", title: "Client Care and Experience", desc: "Organisation, the client experience, contraindications and aftercare.", pages: 27, file: "pdf/Module-5-Client-Care-and-Experience-EN.pdf" },
+    { n: "06", title: "Implementation in Your Business", desc: "How to add Head Spa to the service menu and start offering it.", pages: 28, file: "pdf/Module-6-Implementation-in-Your-Business-EN.pdf" },
+  ];
+  const bonuses = [
+    { code: "Bonus 01", title: "Head Spa Business Kit", desc: "Ready-to-use forms, checklists and planners to run the new service day to day.", cover: "img/bonus-1-en.jpg", file: "pdf/Bonus-1-Head-Spa-Business-Kit-EN.pdf" },
+    { code: "Bonus 02", title: "Head Spa Cosmetics and Products Guide", desc: "Guidance on choosing products and building your kit without unnecessary purchases.", cover: "img/bonus-2-en.jpg", file: "pdf/Bonus-2-Head-Spa-Cosmetics-and-Products-Guide-EN.pdf" },
+    { code: "Bonus 03", title: "Head Spa Menu", desc: "Prices, packages and how to organise the service menu.", cover: "img/bonus-3-en.jpg", file: "pdf/Bonus-3-Head-Spa-Menu-EN.pdf" },
+    { code: "Special bonus", title: "Head Spa Clients", desc: "Content ideas, social media and local partnerships to promote the service.", cover: "img/bonus-special-en.jpg", file: "pdf/Bonus-Special-Head-Spa-Clients-EN.pdf" },
+  ];
+
+  // Per-viewer progress (opened modules) — a convenience only; the page works without it.
+  const KEY = "lg-headspa-opened";
+  let opened = [];
+  try { opened = JSON.parse(localStorage.getItem(KEY) || "[]"); } catch (e) { opened = []; }
+  const save = () => { try { localStorage.setItem(KEY, JSON.stringify(opened)); } catch (e) {} };
+
+  const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+
+  function renderModules() {
+    document.getElementById("modules").innerHTML = modules.map(m => {
+      const done = opened.includes(m.n);
+      return `<article class="card module">
+        <div class="row"><span class="num">${m.n}</span><span class="badge${done ? " done" : ""}">${done ? "Opened" : "Not started"}</span></div>
+        <div><h3>${esc(m.title)}</h3><p>${esc(m.desc)}</p></div>
+        <p class="meta">${m.pages} pages · PDF</p>
+        <button class="btn btn-primary btn-block" type="button" data-open="${m.file}" data-title="Module ${m.n} — ${esc(m.title)}" data-module="${m.n}">Open module</button>
+      </article>`;
+    }).join("");
+    const next = modules.find(m => !opened.includes(m.n)) || modules[modules.length - 1];
+    document.getElementById("next-label").textContent = `Module ${next.n} — ${next.title}`;
+    const nl = document.getElementById("next-link");
+    nl.dataset.open = next.file; nl.dataset.title = `Module ${next.n} — ${next.title}`; nl.dataset.module = next.n;
+  }
+  document.addEventListener("click", e => {
+    const a = e.target.closest("[data-module]");
+    if (a && !opened.includes(a.dataset.module)) { opened.push(a.dataset.module); save(); setTimeout(renderModules, 0); }
+  });
+  renderModules();
+
+  document.getElementById("bonus-list").innerHTML = bonuses.map(b => `
+    <article class="card bonus">
+      <div class="cover"><img src="${b.cover}" alt="${esc(b.title)} cover" loading="lazy" decoding="async"></div>
+      <div class="body">
+        <p class="eyebrow">${esc(b.code)}</p>
+        <h3>${esc(b.title)}</h3>
+        <p>${esc(b.desc)}</p>
+        <button class="btn btn-primary btn-block" type="button" data-open="${b.file}" data-title="${esc(b.title)}">Open material</button>
+      </div>
+    </article>`).join("");
+
+  // Routing between the three sections
+  const VIEWS = ["training", "bonuses", "certificate"];
+  function show() {
+    const v = VIEWS.includes(location.hash.slice(1)) ? location.hash.slice(1) : "training";
+    VIEWS.forEach(n => { document.getElementById("view-" + n).hidden = n !== v; });
+    document.querySelectorAll("[data-tab]").forEach(a => { if (a.dataset.tab === v) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current"); });
+  }
+  window.addEventListener("hashchange", () => { show(); window.scrollTo(0, 0); });
+  show();
+
+  // Certificate
+  const input = document.getElementById("cert-name-input");
+  const nameEl = document.getElementById("cert-name");
+  document.getElementById("cert-date").textContent = "Issued " + new Date().toLocaleDateString("en-AU", { day: "numeric", month: "long", year: "numeric" });
+  try { const n = localStorage.getItem("lg-headspa-name"); if (n) input.value = n; } catch (e) {}
+  const syncName = () => { nameEl.textContent = input.value.trim() || "Your Full Name"; try { localStorage.setItem("lg-headspa-name", input.value); } catch (e) {} };
+  input.addEventListener("input", syncName); syncName();
+
+  const btn = document.getElementById("cert-download");
+  const note = document.getElementById("cert-note");
+  const downloads = {
+    async save({ filename, data }) {
+      const url = URL.createObjectURL(data);
+      const link = document.createElement("a");
+      link.href = url; link.download = filename;
+      document.body.appendChild(link); link.click(); link.remove();
+      setTimeout(() => URL.revokeObjectURL(url), 4000);
+    }
+  };
+  btn.addEventListener("click", async () => {
+    if (!downloads) return;
+    if (!input.value.trim()) { note.textContent = "Add your full name first, then download."; input.focus(); return; }
+    btn.disabled = true; btn.textContent = "Creating PDF…";
+    try {
+      const node = document.getElementById("certificate");
+      const canvas = await html2canvas(node, { scale: 2, backgroundColor: "#F7F2E8", useCORS: true });
+      const { jsPDF } = window.jspdf;
+      const pdf = new jsPDF({ orientation: "landscape", unit: "mm", format: "a4" });
+      const W = pdf.internal.pageSize.getWidth(), H = pdf.internal.pageSize.getHeight();
+      const r = Math.min(W / canvas.width, H / canvas.height), w = canvas.width * r, h = canvas.height * r;
+      pdf.addImage(canvas.toDataURL("image/png"), "PNG", (W - w) / 2, (H - h) / 2, w, h);
+      const slug = input.value.trim().toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+      await downloads.save({ filename: `head-spa-certificate-${slug || "team-member"}.pdf`, data: pdf.output("blob") });
+      note.textContent = "Certificate saved.";
+    } catch (e) {
+      const code = e && e.code;
+      note.textContent = code === "declined" ? "Download cancelled." : code === "rate_limited" ? "A save prompt is already open. Try again in a moment." : "The certificate couldn't be saved. Try again.";
+    } finally { btn.disabled = false; btn.textContent = "Download certificate (PDF)"; }
+  });
+
+  // In-page PDF reader (the viewer can't open PDF files in a new tab)
+  const reader = document.getElementById("reader");
+  const pagesEl = document.getElementById("reader-pages");
+  const saveBtn = document.getElementById("reader-save");
+  let readerToken = 0, currentFile = null, lastFocus = null;
+
+  async function openReader(file, title) {
+    const token = ++readerToken;
+    currentFile = file; lastFocus = document.activeElement;
+    document.getElementById("reader-title").textContent = title;
+    saveBtn.hidden = !downloads;
+    pagesEl.innerHTML = '<p class="reader-msg">Loading&hellip;</p>';
+    reader.hidden = false; document.body.style.overflow = "hidden";
+    document.getElementById("reader-close").focus();
+    try {
+      if (!window.pdfjsLib) throw new Error("reader library not loaded");
+      const res = await fetch(file);
+      if (!res.ok) throw new Error("fetch " + res.status);
+      const pdf = await window.pdfjsLib.getDocument({ data: await res.arrayBuffer(), isEvalSupported: false }).promise;
+      if (token !== readerToken) return;
+      pagesEl.innerHTML = "";
+      const width = Math.min(pagesEl.clientWidth - 32, 1100);
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      for (let i = 1; i <= pdf.numPages; i++) {
+        if (token !== readerToken) return;
+        const page = await pdf.getPage(i);
+        const base = page.getViewport({ scale: 1 });
+        const scale = (width / base.width) * dpr;
+        const vp = page.getViewport({ scale });
+        const wrap = document.createElement("div");
+        wrap.className = "reader-page";
+        const canvas = document.createElement("canvas");
+        canvas.width = Math.floor(vp.width); canvas.height = Math.floor(vp.height);
+        canvas.setAttribute("aria-label", `Page ${i} of ${pdf.numPages}`);
+        wrap.appendChild(canvas); pagesEl.appendChild(wrap);
+        await page.render({ canvasContext: canvas.getContext("2d"), viewport: vp }).promise;
+        // Keep the PDF's links (YouTube lessons) clickable
+        const anns = await page.getAnnotations();
+        anns.filter(a => a.subtype === "Link" && a.url).forEach(a => {
+          const [x1, y1, x2, y2] = base.convertToViewportRectangle(a.rect);
+          const l = document.createElement("a");
+          l.className = "reader-link"; l.href = a.url; l.target = "_blank"; l.rel = "noopener";
+          l.setAttribute("aria-label", "Open linked video");
+          l.style.left = (Math.min(x1, x2) / base.width * 100) + "%";
+          l.style.top = (Math.min(y1, y2) / base.height * 100) + "%";
+          l.style.width = (Math.abs(x2 - x1) / base.width * 100) + "%";
+          l.style.height = (Math.abs(y2 - y1) / base.height * 100) + "%";
+          wrap.appendChild(l);
+        });
+      }
+    } catch (e) {
+      if (token === readerToken) pagesEl.innerHTML = '<p class="reader-msg">This file couldn\'t be shown here.' + (downloads ? " Use Save PDF to download it instead." : " Try reloading the page.") + "</p>";
+    }
+  }
+  function closeReader() {
+    readerToken++; reader.hidden = true; document.body.style.overflow = ""; pagesEl.innerHTML = "";
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+  document.addEventListener("click", e => {
+    const t = e.target.closest("[data-open]");
+    if (t) openReader(t.dataset.open, t.dataset.title || "Course material");
+  });
+  document.getElementById("reader-close").addEventListener("click", closeReader);
+  document.addEventListener("keydown", e => { if (e.key === "Escape" && !reader.hidden) closeReader(); });
+  saveBtn.addEventListener("click", async () => {
+    if (!downloads || !currentFile) return;
+    saveBtn.disabled = true;
+    try {
+      const blob = await (await fetch(currentFile)).blob();
+      await downloads.save({ filename: currentFile.split("/").pop(), data: blob });
+    } catch (e) { /* declined or unavailable: nothing to do */ }
+    finally { saveBtn.disabled = false; }
+  });
+})();
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+</body></html>
